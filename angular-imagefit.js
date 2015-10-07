@@ -21,7 +21,7 @@
         function link(scope, element, attrs, controller) {
             console.log(attrs)
             var imagefitOption = scope.$eval(attrs.imagefitOption);
-            attrs.$observe('src', function () {
+            attrs.$observe('ngSrc', function () {
                 // body
 
                 function imageFit() {
