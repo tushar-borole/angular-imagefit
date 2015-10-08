@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <style>
+        .image-container .image1 {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <link href="whirl.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="image-container">
+
+        <div class="image1">
+            <img src="http://www.menucool.com/slider/jsImgSlider/images/image-slider-2.jpg" />
+        </div>
+
+
+    </div>
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="jquery.imagefit.js"></script>
+    <script>
+        $('.image1').imagefit({
+            mode: 'outside',
+            force: 'true',
+            halign: 'center',
+            valign: 'middle',
+            onLoad: function (index, container, imagecontainer) {
+                console.log(index)
+                console.log(container)
+                console.log(imagecontainer)
+            },
+            onStart: function (index, container, imagecontainer) {
+                console.log(index)
+                console.log(container)
+                console.log(imagecontainer)
+            },
+            onError: function (index, container, imagecontainer) {
+                console.log(index)
+                console.log(container)
+                console.log(imagecontainer)
+            }
+        });
+    </script>
+</body>
+
+</html>
