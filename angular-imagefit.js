@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('imagefit')
+        .module('angular-imagefit', [])
         .directive('imagefit', imagefit);
 
     imagefit.$inject = ['$timeout'];
@@ -21,37 +21,36 @@
         function link(scope, element, attrs, controller) {
             console.log(attrs)
             var imagefitOption = scope.$eval(attrs.imagefitOption);
+
+
+            function imageFit() {
+                $timeout(function () {
+
+
+                    //var elementData=$(element).parent().imagefit(imagefitOption);
+
+                    $(element).imageScale(imagefitOption)
+                }, 0)
+
+            }
+
             attrs.$observe('ngSrc', function () {
-                // body
+                imageFit()
+            })
+            imageFit()
+            $(element).on('load', function () {
+                $timeout(function () {
 
-                function imageFit() {
-                    $timeout(function () {
-
-                        $(element).removeClass("ng-hide");
-                        $(element).parent().imagefit(imagefitOption);
-                    }, 0)
-
-                }
-
-
-
-                $(element).addClass("ng-hide");
-                $(element).on('load', function () {
+                })
+                $(window).resize(function () {
                     imageFit()
-                    $(window).resize(function () {
-                        imageFit()
 
-                    })
                 })
-                
-                $(element).on('error', function () {
-                                       element[0].src = attr.fallbackImage 
-                })
+            })
 
 
 
 
-            });
 
         }
     }
