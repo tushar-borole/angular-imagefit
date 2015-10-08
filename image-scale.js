@@ -173,7 +173,6 @@
     var $element = that.$element = $(element),
       $img = that.$img = element.tagName === 'IMG' ? $element : $element.find("img"),
       img = that.img = $img[0];
-console.log($img)
     that.src = $img.attr('src');
 
     that.imgWidth = img.naturalWidth || img.width;
@@ -186,12 +185,12 @@ console.log($img)
             options.onStart($parent, $img)
             }
             if(options.onLoad){
-            img.load(function () {
+            $img.load(function () {
                 options.onLoad($parent, $img)
             });
             }
              if(options.onError){
-            img.error(function () {
+            $img.error(function () {
                 options.onError($parent, $img)
             });
              }

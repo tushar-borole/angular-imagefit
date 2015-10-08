@@ -29,7 +29,7 @@
 
                     //var elementData=$(element).parent().imagefit(imagefitOption);
 
-                    $(element).imageScale()
+                    $(element).imageScale(imagefitOption)
                 }, 0)
 
             }

@@ -51,6 +51,7 @@
         <div class="inner clearfix">
             <section id="main-content">
 <input type="button" ng-click="image2=image1" value="change"/>
+                <input type="button" ng-click="image2=errorimage" value="error"/>
                 
                 <h3>Fit Image</h3>
                 <div class="image-container">
@@ -113,11 +114,12 @@
                     $scope.defaultImage = "http://www.paolobugatti.com/img/img-default.png"
                     $scope.image1 = "http://wowslider.com/sliders/demo-5/data/images/saarschleife.jpg"
                     $scope.image2 = "http://www.keenthemes.com/preview/metronic/theme/assets/global/plugins/jcrop/demos/demo_files/image1.jpg"
+                      $scope.errorimage = "http://www.keenthemes.com/preview/metrobal/plugins/jcrop/demos/demo_files/image1.jpg"
                     $scope.check = {
-                        mode: 'outside',
-                        force: 'false',
-                        halign: 'center',
-                        valign: 'middle'
+                        onError: function(containr,image){
+                        console.log(containr)
+                        image.attr('src',$scope.defaultImage)
+                        }
                     }
 
                 }
