@@ -56,7 +56,7 @@
                 <h3>Fit Image</h3>
                 <div class="image-container">
                     
-                    <img  imagefit imagefit-option="check" ng-src="{{image2}}" />
+                    <img  imagefit imagefit-error-src="http://www.paolobugatti.com/img/img-default.png" imagefit-option="check" ng-src="{{image2}}" />
                 </div>
                 <div style="float:right">
                   <h3>Original Image</h3>
@@ -116,10 +116,7 @@
                     $scope.image2 = "http://www.keenthemes.com/preview/metronic/theme/assets/global/plugins/jcrop/demos/demo_files/image1.jpg"
                       $scope.errorimage = "http://www.keenthemes.com/preview/metrobal/plugins/jcrop/demos/demo_files/image1.jpg"
                     $scope.check = {
-                        onError: function(containr,image){
-                        console.log(containr)
-                        image.attr('src',$scope.defaultImage)
-                        }
+    
                     }
 
                 }
