@@ -25,7 +25,7 @@ Getting Started
     var app=angular.module("you app name",['angular-imagefit'])
 ####  **Using directive**
 
-    <div class="my-scroll-area" imagefit imagefit-option="check">
+    <div class="my-scroll-area" imagefit imagefit-option="check" imagefit-error-src="http://www.paolobugatti.com/img/img-default.png">
 
 
 ### Documentation
