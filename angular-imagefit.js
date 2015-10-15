@@ -20,8 +20,15 @@
 
         function link(scope, element, attrs, controller) {
             console.log(attrs)
+            imagefitOption = {};
             var imagefitOption = scope.$eval(attrs.imagefitOption);
 
+            if (attrs.imagefitErrorSrc) {
+                imagefitOption.onError = function (containr, image) {
+console.log(image)
+                    image.attr('src', attrs.imagefitErrorSrc)
+                }
+            }
 
             function imageFit() {
                 $timeout(function () {
@@ -39,9 +46,6 @@
             })
             imageFit()
             $(element).on('load', function () {
-                $timeout(function () {
-
-                })
                 $(window).resize(function () {
                     imageFit()
 
