@@ -20,6 +20,7 @@
 
         function link(scope, element, attrs, controller) {
             console.log(attrs)
+            $(element).css({"display":'none'});
             imagefitOption = {};
             var imagefitOption = scope.$eval(attrs.imagefitOption);
 
@@ -46,6 +47,7 @@ console.log(image)
             })
             imageFit()
             $(element).on('load', function () {
+                 $(element).css({"display":''});
                 $(window).resize(function () {
                     imageFit()
 
