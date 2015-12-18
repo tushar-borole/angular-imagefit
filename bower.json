@@ -11,7 +11,7 @@
   },
   "homepage": "http://tushariscoolster.github.io/angular-imagefit/",
   "license": "LGPL-2.1",
-  "main": "angular-unsaved-changes.js",
+  "main": "angular-imagefit.js",
   "keywords": ["angular-imagefit",
                "angular"
   ],
